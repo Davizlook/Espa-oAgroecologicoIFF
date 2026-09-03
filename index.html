@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o espaço agroecológico da nossa escola.">
+    <title>Raízes da Escola | Espaço Agroecológico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Raízes da Escola - início"><span class="brand-mark"
+                aria-hidden="true">*</span><span>Raízes <em>da escola</em></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+            aria-label="Abrir menu"><span></span><span></span><span></span></button>
+        <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+            <a class="nav-link is-active" href="#inicio" data-page="home">Início</a>
+            <a class="nav-link" href="#projeto" data-page="home">O projeto</a>
+            <a class="nav-link" href="#catalogo" data-page="catalogo">Catálogo <span class="nav-dot"
+                    aria-hidden="true"></span></a>
+        </nav>
+        <a class="header-action" href="#projeto">Conheça o Projeto <span aria-hidden="true">&#8599;</span></a>
+    </header>
+
+    <main>
+        <section id="inicio" class="page-section hero-section" data-view="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span></span> Um laboratório vivo na escola</p>
+                <h1>Onde o cuidado<br><i>vira colheita.</i></h1>
+                <p class="hero-intro">Um espaço para aprender com a terra, cultivar relações e descobrir que toda
+                    mudança começa pequena.</p><a class="primary-button" href="#projeto">Explorar o projeto <span
+                        aria-hidden="true">&#8595;</span></a>
+            </div>
+            <div class="project-visual reveal reveal-delay">
+                <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.35.jpeg" alt="">
+            </div>
+            <div class="scroll-cue" aria-hidden="true"><span></span> role para descobrir</div>
+        </section>
+
+        <section id="projeto" class="project-section page-section" data-view="home">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><span></span> Sobre a iniciativa</p>
+                <h2>Uma escola que<br><i>floresce junto.</i></h2>
+            </div>
+            <div class="project-content">
+                <div class="project-text reveal">
+                    <p class="large-copy">O espaço agroecológico é um lugar de encontro entre conhecimento, comunidade e
+                        natureza.</p>
+                    <p>Na prática, nós estudantes, e nosso professor <strong>Felipe Machado</strong> experimentam formas
+                        mais sustentáveis de cuidar do solo e das plantas cultivadas. Cada canteiro conta uma história,
+                        pois, várias turmas já participaram do projeto e deixaram suas marcas registradas.</p>
+                    <div class="stats-row">
+                        <div><strong>01</strong><span>espaço<br>compartilhado</span></div>
+                        <div><strong>∞</strong><span>possibilidades<br>de aprender</span></div>
+                    </div>
+                </div>
+                <div class="project-visual reveal reveal-delay">
+                    <div class="image-frame"><img
+                            src="assets/images/felipe.jpeg"
+                            alt="Mãos cuidando de uma muda em um canteiro" loading="lazy"></div>
+                    <p class="image-caption">A terra também é uma sala de aula.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="video-section page-section" data-view="home">
+            <div class="video-intro reveal">
+                <p class="eyebrow"><span></span> Em movimento</p>
+                <h2>Veja o projeto<br><i>ganhar vida.</i></h2>
+            </div>
+            <div class="video-placeholder reveal reveal-delay">
+                <div class="video-text"><span class="play-icon" aria-hidden="true">&#9654;</span><span>O vídeo da
+                        nossa<br>história entra aqui</span></div>
+                <p>Adicione o link ou arquivo do vídeo do projeto quando ele estiver pronto.</p>
+            </div>
+        </section>
+
+        <section id="catalogo" class="catalog-section page-section" data-view="catalogo" hidden>
+            <div class="catalog-empty reveal"><span class="empty-number">02</span>
+                <p class="eyebrow"><span></span> Em construção</p>
+                <h1>Catálogo<br><i>de plantas.</i></h1>
+                <p>Em breve, este espaço vai reunir as espécies cultivadas na escola e as histórias de cada uma delas.
+                </p><a class="secondary-button" href="#inicio">Voltar para o início <span
+                        aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="catalog-pattern" aria-hidden="true"><span>+</span><span>+</span><span>+</span></div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-brand">Raízes <em>da escola</em></div>
+        <p>Aprender, plantar, transformar.</p><span>&copy; <span id="current-year"></span></span>
+    </footer>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

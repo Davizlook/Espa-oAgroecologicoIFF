@@ -13,16 +13,24 @@ const pageSections = document.querySelectorAll("[data-view]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function showPage(page) {
-	const catalogIsVisible = page === "catalogo";
+	const currentPage = page === "catalogo" || page === "participantes" ? page : "home";
 	pageSections.forEach((section) => {
-		section.hidden = section.dataset.view === "catalogo" ? !catalogIsVisible : catalogIsVisible;
+		const shouldShow = section.dataset.view === currentPage;
+		section.hidden = !shouldShow;
 	});
-	navLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.page === page));
-	if (catalogIsVisible) window.scrollTo({ top:0, behavior:"smooth" });
+	
+	navLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.page === currentPage));
+	if (currentPage === "catalogo" || currentPage === "participantes") {
+		window.scrollTo({ top:0, behavior:"smooth" });
+	}
 }
 
 function handleRoute() {
-	showPage(window.location.hash === "#catalogo" ? "catalogo" : "home");
+	const routeMap = {
+		"#catalogo": "catalogo"
+	};
+
+	showPage(routeMap[window.location.hash] || "home");
 }
 
 menuToggle.addEventListener("click", () => {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conheça o espaço agroecológico da nossa escola.">
     <title>Raízes da Escola | Espaço Agroecológico</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-raizes.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,16 +17,25 @@
 
 <body>
     <header class="site-header">
-        <a class="brand" href="#inicio" aria-label="Raízes da Escola - início"><span class="brand-mark"
-                aria-hidden="true">*</span><span>Raízes <em>da escola</em></span></a>
+        <a class="brand" href="#inicio" aria-label="Raízes da Escola - início"><img class="brand-mark"
+            src="assets/images/logo-raizes.svg" alt=""><span>Raízes <em>da escola</em></span></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
             aria-label="Abrir menu"><span></span><span></span><span></span></button>
         <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
             <a class="nav-link is-active" href="#inicio" data-page="home">Início</a>
             <a class="nav-link" href="#projeto" data-page="home">O projeto</a>
+            <a class="nav-link" href="#agroecologia" data-page="agroecologia">Agroecologia</a>
             <a class="nav-link" href="#catalogo" data-page="catalogo">Catálogo <span class="nav-dot"
                     aria-hidden="true"></span></a>
         </nav>
+        <a class="instagram-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer"
+            aria-label="Instagram do projeto" title="Instagram do projeto">
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+        </a>
         <a class="header-action" href="#projeto">Conheça o Projeto <span aria-hidden="true">&#8599;</span></a>
     </header>
 
@@ -75,15 +85,14 @@
                 <p class="eyebrow"><span></span> Em movimento</p>
                 <h2>Veja o projeto<br><i>ganhar vida.</i></h2>
             </div>
-            <div class="video-placeholder reveal reveal-delay">
-                <div class="video-text"><span class="play-icon" aria-hidden="true">&#9654;</span><span>O vídeo da
-                        nossa<br>história entra aqui</span></div>
-                <p>Adicione o link ou arquivo do vídeo do projeto quando ele estiver pronto.</p>
+            <div class="video-player reveal reveal-delay">
+                <video src="assets/videos/WhatsApp Video 2026-09-09 at 00.19.06.mp4" controls
+                    preload="metadata" playsinline volume="1" aria-label="Vídeo do projeto agroecológico"></video>
             </div>
         </section>
 
         <section id="catalogo" class="catalog-section page-section" data-view="catalogo" hidden>
-            <div class="catalog-empty reveal"><span class="empty-number">02</span>
+            <div class="catalog-empty reveal"><span class="empty-number">01</span>
                 <p class="eyebrow"><span></span> Em construção</p>
                 <h1>Catálogo<br><i>de plantas.</i></h1>
                 <p>Em breve, este espaço vai reunir as espécies cultivadas na escola e as histórias de cada uma delas.
@@ -91,6 +100,75 @@
                         aria-hidden="true">&#8599;</span></a>
             </div>
             <div class="catalog-pattern" aria-hidden="true"><span>+</span><span>+</span><span>+</span></div>
+        </section>
+
+        <section id="agroecologia" class="agro-section page-section" data-view="agroecologia" hidden>
+            <div class="agro-heading reveal">
+                <p class="eyebrow"><span></span> Conhecimento que cultiva</p>
+                <h1>Por que a<br><i>agroecologia importa?</i></h1>
+                <p>A agroecologia aproxima ciência, cultura e cuidado para produzir alimentos sem separar a vida do campo da saúde do planeta.</p>
+            </div>
+            <div class="agro-grid">
+                <article class="agro-card reveal">
+                    <span class="agro-number">01</span>
+                    <h2>Um desafio<br><i>do mundo.</i></h2>
+                    <p>Em diferentes países, práticas agroecológicas ajudam a recuperar o solo, proteger a água, ampliar a biodiversidade e tornar a agricultura mais resistente às mudanças climáticas.</p>
+                    <p>Elas também valorizam sementes, saberes locais e formas de produção que fortalecem a segurança alimentar e a vida das comunidades.</p>
+                </article>
+                <article class="agro-card agro-card-region reveal reveal-delay">
+                    <span class="agro-number">02</span>
+                    <h2>Um cuidado<br><i>do nosso lugar.</i></h2>
+                    <p>No Noroeste Fluminense, cuidar da terra é cuidar das nascentes, dos rios e das famílias que vivem da agricultura. A agroecologia pode apoiar a produção local com menos dependência de insumos químicos e mais equilíbrio entre cultivo e natureza.</p>
+                    <p>Na escola, esse aprendizado começa pequeno: observar o solo, cultivar com responsabilidade e compartilhar o que funciona com a comunidade.</p>
+                </article>
+            </div>
+            <div class="agro-closing reveal">
+                <strong>Quando o território aprende a se cuidar, todo mundo colhe.</strong>
+                <a class="secondary-button" href="#projeto">Conhecer o projeto <span aria-hidden="true">&#8599;</span></a>
+            </div>
+        </section>
+
+        <section id="galeria" class="gallery-section page-section" data-view="home">
+            <div class="gallery-heading reveal">
+                <p class="eyebrow"><span></span> Memórias do projeto</p>
+                <h1>Um espaço que<br><i>ganha vida.</i></h1>
+                <p>Imagens dos encontros, dos cuidados e das descobertas que acontecem no nosso espaço agroecológico.</p>
+            </div>
+            <div class="gallery-carousel reveal reveal-delay" aria-label="Galeria de imagens do projeto">
+                <div class="gallery-stage">
+                    <figure class="gallery-slide is-active">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31 (1).jpeg" alt="Espaço agroecológico da escola" loading="eager">
+                        <figcaption><strong>01</strong><span>O espaço onde tudo começa.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.36.jpeg" alt="Detalhe do espaço agroecológico" loading="lazy">
+                        <figcaption><strong>02</strong><span>Cada canteiro guarda uma história.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.35 (1).jpeg" alt="Atividade no projeto agroecológico" loading="lazy">
+                        <figcaption><strong>03</strong><span>Aprender fazendo, lado a lado.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31 (2).jpeg" alt="Plantas cultivadas no projeto" loading="lazy">
+                        <figcaption><strong>04</strong><span>O cuidado aparece em cada detalhe.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.33.jpeg" alt="Vivência dos estudantes na horta" loading="lazy">
+                        <figcaption><strong>05</strong><span>Um laboratório vivo dentro da escola.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31.jpeg" alt="Cultivo no espaço agroecológico" loading="lazy">
+                        <figcaption><strong>06</strong><span>Plantando ideias para o futuro.</span></figcaption>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.34 (4).jpeg" alt="Colheita no espaço agroecológico" loading="lazy">
+                        <figcaption><strong>07</strong><span>Colhendo o que se planta.</span></figcaption>
+                    </figure>
+                </div>
+                <button class="gallery-control gallery-prev" type="button" aria-label="Imagem anterior">&#8592;</button>
+                <button class="gallery-control gallery-next" type="button" aria-label="Próxima imagem">&#8594;</button>
+                <div class="gallery-dots" aria-label="Escolher imagem"></div>
+            </div>
         </section>
     </main>
     <footer class="site-footer">

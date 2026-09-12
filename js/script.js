@@ -11,19 +11,44 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 const pageSections = document.querySelectorAll("[data-view]");
 const navLinks = document.querySelectorAll(".nav-link");
+const gallerySlides = document.querySelectorAll(".gallery-slide");
+const galleryDots = document.querySelector(".gallery-dots");
+let currentGallerySlide = 0;
 
 function showPage(page) {
-	const catalogIsVisible = page === "catalogo";
+	const activePage = ["home", "catalogo", "agroecologia"].includes(page) ? page : "home";
 	pageSections.forEach((section) => {
-		section.hidden = section.dataset.view === "catalogo" ? !catalogIsVisible : catalogIsVisible;
+		section.hidden = section.dataset.view !== activePage;
 	});
-	navLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.page === page));
-	if (catalogIsVisible) window.scrollTo({ top:0, behavior:"smooth" });
+	navLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.page === activePage));
+	if (activePage !== "home") window.scrollTo({ top:0, behavior:"smooth" });
 }
 
 function handleRoute() {
-	showPage(window.location.hash === "#catalogo" ? "catalogo" : "home");
+	const route = window.location.hash.slice(1);
+	showPage(["catalogo", "agroecologia"].includes(route) ? route : "home");
 }
+
+function updateGallery(nextSlide) {
+	currentGallerySlide = (nextSlide + gallerySlides.length) % gallerySlides.length;
+	gallerySlides.forEach((slide, index) => slide.classList.toggle("is-active", index === currentGallerySlide));
+	galleryDots?.querySelectorAll("button").forEach((dot, index) => {
+		dot.classList.toggle("is-active", index === currentGallerySlide);
+		dot.setAttribute("aria-current", index === currentGallerySlide ? "true" : "false");
+	});
+}
+
+gallerySlides.forEach((_, index) => {
+	const dot = document.createElement("button");
+	dot.type = "button";
+	dot.ariaLabel = `Ver imagem ${index + 1}`;
+	dot.addEventListener("click", () => updateGallery(index));
+	galleryDots?.append(dot);
+});
+
+document.querySelector(".gallery-prev")?.addEventListener("click", () => updateGallery(currentGallerySlide - 1));
+document.querySelector(".gallery-next")?.addEventListener("click", () => updateGallery(currentGallerySlide + 1));
+updateGallery(0);
 
 menuToggle.addEventListener("click", () => {
 	const isOpen = mainNav.classList.toggle("is-open");

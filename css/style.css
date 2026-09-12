@@ -67,15 +67,10 @@ a {
 }
 
 .brand-mark {
-    align-items: center;
-    background: var(--lime);
-    border-radius: 50%;
-    display: flex;
-    font-family: var(--body);
-    font-size: 20px;
-    height: 35px;
-    justify-content: center;
-    width: 35px;
+    display: block;
+    height: 38px;
+    object-fit: contain;
+    width: 38px;
 }
 
 .main-nav {
@@ -131,6 +126,38 @@ a {
 .secondary-button span {
     font-size: 17px;
     margin-left: 9px;
+}
+
+.instagram-link {
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: flex;
+    height: 34px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 22px;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+    width: 34px;
+}
+
+.instagram-link:hover {
+    background: var(--lime);
+    color: var(--deep);
+    transform: translateY(-2px);
+}
+
+.instagram-link svg {
+    fill: none;
+    height: 17px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    width: 17px;
+}
+
+.instagram-link svg circle:last-child {
+    fill: currentColor;
+    stroke: none;
 }
 
 .menu-toggle {
@@ -503,69 +530,38 @@ h2 i {
     background: var(--lime);
 }
 
-.video-placeholder {
-    align-items: center;
-    background: linear-gradient(135deg, #506f4b, #183c33);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 320px;
+.video-player {
+    aspect-ratio: 16 / 9;
+    background: #081b16;
+    border: 1px solid rgba(214, 227, 95, .35);
+    box-shadow: 18px 18px 0 rgba(214, 227, 95, .12);
     overflow: hidden;
     position: relative;
-    text-align: center;
 }
 
-.video-placeholder::before,
-.video-placeholder::after {
-    border: 1px solid rgba(214, 227, 95, .35);
-    border-radius: 50%;
-    content: "";
-    height: 360px;
-    position: absolute;
-    width: 360px;
+.video-player video {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
 }
 
-.video-placeholder::before {
-    left: -110px;
-    top: -160px;
-}
-
-.video-placeholder::after {
-    bottom: -230px;
-    right: -90px;
-}
-
-.video-text {
-    align-items: center;
-    display: flex;
-    font-family: var(--heading);
-    font-size: 28px;
-    gap: 20px;
-    line-height: 1;
-    position: relative;
-    z-index: 1;
-}
-
-.play-icon {
-    align-items: center;
+.video-unmute {
     background: var(--lime);
-    border-radius: 50%;
+    border: 0;
+    bottom: 17px;
     color: var(--deep);
-    display: flex;
-    font-family: var(--body);
-    font-size: 16px;
-    height: 58px;
-    justify-content: center;
-    padding-left: 3px;
-    width: 58px;
+    cursor: pointer;
+    font: 700 11px var(--body);
+    padding: 10px 13px;
+    position: absolute;
+    right: 17px;
+    transition: background .2s ease, transform .2s ease;
 }
 
-.video-placeholder p {
-    color: rgba(251, 249, 243, .68);
-    font-size: 11px;
-    margin: 25px 0 0;
-    position: relative;
-    z-index: 1;
+.video-unmute:hover {
+    background: var(--paper);
+    transform: translateY(-2px);
 }
 
 .catalog-section {
@@ -628,6 +624,221 @@ h2 i {
     margin-left: 80px;
 }
 
+.agro-section {
+    background: var(--cream);
+    min-height: 650px;
+    padding-bottom: 105px;
+    padding-top: 95px;
+}
+
+.agro-heading {
+    max-width: 720px;
+}
+
+.agro-heading>p:last-child {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 30px 0 0;
+    max-width: 510px;
+}
+
+.agro-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 78px;
+}
+
+.agro-card {
+    background: var(--paper);
+    border-top: 4px solid var(--clay);
+    padding: 28px clamp(24px, 3vw, 46px) 35px;
+}
+
+.agro-card-region {
+    background: var(--deep);
+    border-top-color: var(--lime);
+    color: var(--paper);
+}
+
+.agro-number {
+    color: var(--clay);
+    font-family: var(--heading);
+    font-size: 22px;
+}
+
+.agro-card-region .agro-number {
+    color: var(--lime);
+}
+
+.agro-card h2 {
+    font-size: clamp(34px, 4vw, 55px);
+    margin: 25px 0 28px;
+}
+
+.agro-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0 0 17px;
+    max-width: 500px;
+}
+
+.agro-card-region p {
+    color: rgba(251, 249, 243, .72);
+}
+
+.agro-closing {
+    align-items: center;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 65px;
+    padding-top: 25px;
+}
+
+.agro-closing strong {
+    font-family: var(--heading);
+    font-size: 25px;
+    font-weight: 600;
+    max-width: 450px;
+}
+
+.gallery-section {
+    background: var(--cream);
+    min-height: 650px;
+    padding-bottom: 105px;
+    padding-top: 95px;
+}
+
+.gallery-heading {
+    max-width: 650px;
+}
+
+.gallery-heading>p:last-child {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 30px 0 0;
+    max-width: 460px;
+}
+
+.gallery-carousel {
+    margin-top: 70px;
+    padding-bottom: 58px;
+    position: relative;
+}
+
+.gallery-stage {
+    background: var(--deep);
+    box-shadow: 18px 18px 0 rgba(200, 111, 74, .18);
+    min-height: min(58vw, 570px);
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-slide {
+    display: none;
+    height: min(58vw, 570px);
+    margin: 0;
+    position: relative;
+}
+
+.gallery-slide.is-active {
+    display: block;
+}
+
+.gallery-slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 72%;
+    opacity: .88;
+    width: 100%;
+}
+
+.gallery-slide figcaption {
+    align-items: center;
+    background: rgba(14, 40, 32, .9);
+    bottom: 0;
+    color: var(--paper);
+    display: flex;
+    gap: 17px;
+    left: 0;
+    padding: 17px 23px;
+    position: absolute;
+    right: 0;
+}
+
+.gallery-slide figcaption strong {
+    color: var(--lime);
+    font-family: var(--heading);
+    font-size: 24px;
+}
+
+.gallery-slide figcaption span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+
+.gallery-control {
+    align-items: center;
+    background: var(--lime);
+    border: 0;
+    border-radius: 50%;
+    color: var(--deep);
+    cursor: pointer;
+    display: flex;
+    font-size: 22px;
+    height: 48px;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 24px);
+    transition: background .2s ease, transform .2s ease;
+    width: 48px;
+    z-index: 1;
+}
+
+.gallery-control:hover {
+    background: var(--paper);
+    transform: scale(1.06);
+}
+
+.gallery-prev {
+    left: 18px;
+}
+
+.gallery-next {
+    right: 18px;
+}
+
+.gallery-dots {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.gallery-dots button {
+    background: rgba(24, 53, 43, .3);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    padding: 0;
+    transition: background .2s ease, transform .2s ease;
+    width: 8px;
+}
+
+.gallery-dots button.is-active {
+    background: var(--clay);
+    transform: scale(1.45);
+}
+
 .site-footer {
     align-items: center;
     background: var(--paper);
@@ -673,6 +884,11 @@ h2 i {
 
     .header-action {
         display: none;
+    }
+
+    .instagram-link {
+        margin-left: auto;
+        margin-right: 12px;
     }
 
     .menu-toggle {
@@ -757,12 +973,62 @@ h2 i {
         margin-bottom: 45px;
     }
 
-    .video-placeholder {
-        min-height: 280px;
+    .video-player {
+        box-shadow: 9px 9px 0 rgba(214, 227, 95, .12);
     }
 
     .catalog-section {
         min-height: 600px;
+    }
+
+    .agro-section {
+        padding-bottom: 75px;
+        padding-top: 75px;
+    }
+
+    .gallery-section {
+        padding-bottom: 75px;
+        padding-top: 75px;
+    }
+
+    .gallery-carousel {
+        margin-top: 50px;
+    }
+
+    .gallery-stage,
+    .gallery-slide {
+        height: 390px;
+        min-height: 390px;
+    }
+
+    .gallery-slide figcaption {
+        padding: 14px 16px;
+    }
+
+    .gallery-slide figcaption span {
+        font-size: 10px;
+    }
+
+    .gallery-control {
+        height: 40px;
+        top: calc(50% - 20px);
+        width: 40px;
+    }
+
+    .agro-grid {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .agro-card + .agro-card {
+        margin-top: 20px;
+    }
+
+    .agro-closing {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+        margin-top: 45px;
     }
 
     .site-footer {

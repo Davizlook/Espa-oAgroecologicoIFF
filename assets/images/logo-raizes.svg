@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Raízes da Escola</title>
+  <desc id="desc">Uma muda crescendo dentro de um círculo verde.</desc>
+  <circle cx="48" cy="48" r="46" fill="#d6e35f"/>
+  <path d="M48 74V39" fill="none" stroke="#18352b" stroke-linecap="round" stroke-width="5"/>
+  <path d="M48 47C32 48 23 40 24 27c14 0 24 6 24 20Z" fill="#18352b"/>
+  <path d="M49 41c2-15 12-23 25-22 0 14-8 23-25 27Z" fill="#c86f4a"/>
+  <path d="M37 74h22" fill="none" stroke="#18352b" stroke-linecap="round" stroke-width="5"/>
+</svg>

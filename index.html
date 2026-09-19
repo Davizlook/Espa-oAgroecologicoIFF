@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2026-09-19-album">
 </head>
 
 <body>
@@ -25,8 +25,9 @@
             <a class="nav-link is-active" href="#inicio" data-page="home">Início</a>
             <a class="nav-link" href="#projeto" data-page="home">O projeto</a>
             <a class="nav-link" href="#agroecologia" data-page="agroecologia">Agroecologia</a>
-            <a class="nav-link" href="#catalogo" data-page="catalogo">Catálogo <span class="nav-dot"
+                <a class="nav-link" href="php/plantas.php">Catálogo <span class="nav-dot"
                     aria-hidden="true"></span></a>
+                <a class="nav-link" href="#galeria" data-page="galeria">Galeria</a>
         </nav>
         <a class="instagram-link" href="https://www.instagram.com/espaco.agroecologico.iff?stkn=bndmaWpqZjhsc2Vz" target="_blank" rel="noreferrer"
             aria-label="Instagram do projeto" title="Instagram do projeto">
@@ -86,8 +87,10 @@
                 <h2>Veja o projeto<br><i>ganhar vida.</i></h2>
             </div>
             <div class="video-player reveal reveal-delay">
-                <video src="assets/videos/WhatsApp Video 2026-09-09 at 00.19.06.mp4" controls
-                    preload="metadata" playsinline volume="1" aria-label="Vídeo do projeto agroecológico"></video>
+                <video controls preload="metadata" playsinline aria-label="Vídeo do projeto agroecológico">
+                    <source src="assets/videos/WhatsApp%20Video%202026-09-09%20at%2000.19.06.mp4" type="video/mp4">
+                    Seu navegador não consegue reproduzir este vídeo. <a href="assets/videos/WhatsApp%20Video%202026-09-09%20at%2000.19.06.mp4">Baixe o arquivo MP4</a>.
+                </video>
             </div>
         </section>
 
@@ -128,54 +131,26 @@
             </div>
         </section>
 
-        <section id="galeria" class="gallery-section page-section" data-view="home">
+        <section id="galeria" class="gallery-section page-section" data-view="galeria" hidden>
             <div class="gallery-heading reveal">
                 <p class="eyebrow"><span></span> Memórias do projeto</p>
                 <h1>Um espaço que<br><i>ganha vida.</i></h1>
                 <p>Imagens dos encontros, dos cuidados e das descobertas que acontecem no nosso espaço agroecológico.</p>
             </div>
-            <div class="gallery-carousel reveal reveal-delay" aria-label="Galeria de imagens do projeto">
-                <div class="gallery-stage">
-                    <figure class="gallery-slide is-active">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31 (1).jpeg" alt="Espaço agroecológico da escola" loading="eager">
-                        <figcaption><strong>01</strong><span>O espaço onde tudo começa.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.36.jpeg" alt="Detalhe do espaço agroecológico" loading="lazy">
-                        <figcaption><strong>02</strong><span>Cada canteiro guarda uma história.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.35 (1).jpeg" alt="Atividade no projeto agroecológico" loading="lazy">
-                        <figcaption><strong>03</strong><span>Aprender fazendo, lado a lado.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31 (2).jpeg" alt="Plantas cultivadas no projeto" loading="lazy">
-                        <figcaption><strong>04</strong><span>O cuidado aparece em cada detalhe.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.33.jpeg" alt="Vivência dos estudantes na horta" loading="lazy">
-                        <figcaption><strong>05</strong><span>Um laboratório vivo dentro da escola.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.31.jpeg" alt="Cultivo no espaço agroecológico" loading="lazy">
-                        <figcaption><strong>06</strong><span>Plantando ideias para o futuro.</span></figcaption>
-                    </figure>
-                    <figure class="gallery-slide">
-                        <img src="assets/images/WhatsApp Image 2026-09-02 at 18.56.34 (4).jpeg" alt="Colheita no espaço agroecológico" loading="lazy">
-                        <figcaption><strong>07</strong><span>Colhendo o que se planta.</span></figcaption>
-                    </figure>
-                </div>
-                <button class="gallery-control gallery-prev" type="button" aria-label="Imagem anterior">&#8592;</button>
-                <button class="gallery-control gallery-next" type="button" aria-label="Próxima imagem">&#8594;</button>
-                <div class="gallery-dots" aria-label="Escolher imagem"></div>
+            <div class="gallery-grid reveal reveal-delay" aria-label="Galeria de imagens do projeto">
+                <div class="gallery-stage"></div>
             </div>
         </section>
     </main>
+    <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+        <button class="lightbox-close" type="button" aria-label="Fechar imagem ampliada">&#215;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
     <footer class="site-footer">
         <div class="footer-brand">Raízes <em>da escola</em></div>
         <p>Aprender, plantar, transformar.</p><span>&copy; <span id="current-year"></span></span>
     </footer>
-    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/script.js?v=2026-09-19-album"></script>
 </body>
 
 </html>

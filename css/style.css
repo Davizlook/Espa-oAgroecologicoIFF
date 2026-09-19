@@ -3,6 +3,121 @@
     --deep: #0e2820;
     --cream: #f2ede3;
     --paper: #fbf9f3;
+    --lime: #d6e35f;
+    --clay: #c86f4a;
+    --muted: #718278;
+    --line: rgba(24, 53, 43, .16);
+    --heading: "Fraunces", Georgia, serif;
+    --body: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    align-items: center;
+    background: var(--paper);
+    display: flex;
+    height: 82px;
+    justify-content: space-between;
+    padding: 0 clamp(24px, 6vw, 92px);
+    position: relative;
+    z-index: 5;
+}
+
+.brand,
+.footer-brand {
+    align-items: center;
+    display: flex;
+    font-family: var(--heading);
+    font-size: 21px;
+    font-weight: 700;
+    gap: 10px;
+}
+
+.brand em,
+.footer-brand em {
+    font-family: var(--body);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.brand-mark {
+    display: block;
+    height: 38px;
+    object-fit: contain;
+    width: 38px;
+}
+
+.main-nav {
+    display: flex;
+    gap: clamp(22px, 4vw, 52px);
+    margin-left: 13%;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 30px 0;
+    position: relative;
+    transition: color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+    color: var(--ink);
+}
+
+.nav-link.is-active::after {
+    background: var(--clay);
+    border-radius: 50%;
+    bottom: 20px;
+    content: "";
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 5px;
+}
+
+.nav-dot {
+    background: var(--clay);
+    border-radius: 50%;
+    display: inline-block;
+    height: 5px;
+    margin: 0 0 2px 5px;
+    width: 5px;
+}
+
+.header-action {
+    border-bottom: 1px solid var(--ink);
+    font-size: 11px;
+    font-weight: 700;
     padding-bottom: 5px;
 }
 
@@ -739,6 +854,122 @@ h2 i {
 .lightbox-open {
     overflow: hidden;
 }
+
+.participants-page {
+    background: var(--cream);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+    min-height: 650px;
+    overflow: hidden;
+    padding-bottom: 80px;
+    padding-top: 75px;
+    position: relative;
+}
+
+.participants-copy {
+    align-self: center;
+    max-width: 580px;
+    padding-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.participants-copy h1 {
+    font-size: clamp(60px, 7vw, 108px);
+}
+
+.participants-copy .eyebrow {
+    color: var(--clay);
+    margin-top: 0;
+}
+
+.participants-copy .eyebrow span {
+    background: var(--clay);
+}
+
+.participants-copy .participants-intro {
+    color: #52665c;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 30px 0;
+    max-width: 340px;
+}
+
+.participants-gallery {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: grid;
+    gap: 36px;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    max-width: 680px;
+    min-height: 420px;
+    padding: 20px;
+    place-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.participant-card {
+    align-self: stretch;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 0 14px 36px rgba(24, 53, 43, .08);
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    min-height: 250px;
+    overflow: hidden;
+    position: relative;
+    width: min(280px, 100%);
+}
+
+.participant-card:nth-child(2) {
+    margin-top: 34px;
+}
+
+.participant-card:nth-child(3) {
+    margin-top: -13px;
+}
+
+.participant-card img {
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.participant-card-info {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 14px 16px;
+}
+
+.participant-card-number {
+    color: var(--clay);
+    font-family: var(--heading);
+    font-size: 21px;
+}
+
+.participant-card-name {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.participants-page .secondary-button {
+    margin-top: 10px;
+}
+
 
 .site-footer {
     align-items: center;

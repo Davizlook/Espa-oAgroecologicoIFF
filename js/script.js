@@ -146,7 +146,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 function showPage(page) {
-	const activePage = ["home", "catalogo", "agroecologia", "galeria"].includes(page) ? page : "home";
+	const activePage = ["home", "catalogo", "agroecologia", "galeria", "participantes"].includes(page) ? page : "home";
 	pageSections.forEach((section) => {
 		section.hidden = section.dataset.view !== activePage;
 		if (section.dataset.view === activePage) {
@@ -159,7 +159,7 @@ function showPage(page) {
 
 function handleRoute() {
 	const route = window.location.hash.slice(1);
-	showPage(["catalogo", "agroecologia", "galeria"].includes(route) ? route : "home");
+	showPage(["catalogo", "agroecologia", "galeria", "participantes"].includes(route) ? route : "home");
 }
 
 menuToggle.addEventListener("click", () => {

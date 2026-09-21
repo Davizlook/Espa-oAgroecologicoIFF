@@ -162,18 +162,19 @@ function handleRoute() {
 	showPage(["catalogo", "agroecologia", "galeria", "participantes"].includes(route) ? route : "home");
 }
 
-menuToggle.addEventListener("click", () => {
+menuToggle?.addEventListener("click", () => {
 	const isOpen = mainNav.classList.toggle("is-open");
 	menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-mainNav.addEventListener("click", () => {
+mainNav?.addEventListener("click", () => {
 	mainNav.classList.remove("is-open");
 	menuToggle.setAttribute("aria-expanded", "false");
 });
 
 window.addEventListener("hashchange", handleRoute);
-document.querySelector("#current-year").textContent = new Date().getFullYear();
+const currentYear = document.querySelector("#current-year");
+if (currentYear) currentYear.textContent = new Date().getFullYear();
 
 const revealObserver = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
